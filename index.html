@@ -12,12 +12,15 @@
 
 
     <script>
+        function generateRandomInteger(min, max){
+            let casualnumber = Math.random();
+            casualnumber = casualnumber * (max - min +1 ) +min;
+            casualnumber=Math.floor(casualnumber)
+            return casualnumber
+        }
+        let randomnumber = generateRandomInteger(0,10);
+        alert(randomnumber);
         
-
-
-
-
-
     </script>
 </body>
 </html>
