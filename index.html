@@ -18,9 +18,22 @@
             casualnumber=Math.floor(casualnumber)
             return casualnumber
         }
-        let randomnumber = generateRandomInteger(0,10);
-        alert(randomnumber);
-        
+        function sanitize (inputstring){
+            let sanitized = inputstring.toLowerCase().trim()
+
+        return sanitized
+        }
+        let numeroutente = prompt("Inserire il numero da indovinare");
+        while(numeroutente === null){
+            alert("Inserire una risposta valida")
+            numeroutente = prompt("Inserire il numero da indovinare");
+        }
+        if(sanitize(numeroutente) === casualnumber){ //da rivedere
+            console.log("Corretto hai indovinato")
+        } else {
+            console.log("Errato")
+        }
+
     </script>
 </body>
 </html>
