@@ -16,20 +16,22 @@
             let casualnumber = Math.random();
             casualnumber = casualnumber * (max - min +1 ) +min;
             casualnumber=Math.floor(casualnumber)
-            return casualnumber
+            return casualnumber;
         }
         function sanitize (inputstring){
             let sanitized = inputstring.toLowerCase().trim()
 
-        return sanitized
+        return sanitized;
         }
+        let casualnumber = generateRandomInteger(1, 10);
+        console.log(casualnumber);
         let numeroutente = prompt("Inserire il numero da indovinare");
         while(numeroutente === null){
             alert("Inserire una risposta valida")
             numeroutente = prompt("Inserire il numero da indovinare");
         }
-        if(sanitize(numeroutente) === casualnumber){ //da rivedere
-            console.log("Corretto hai indovinato")
+        if(sanitize(numeroutente) === casualnumber){ 
+            console.log("Corretto hai indovinato") //Aggiustato l'algoritmo del numero randomico, presenti bug sul confronto tra il numero inserito dall'utente in input e il numero randomico.
         } else {
             console.log("Errato")
         }
