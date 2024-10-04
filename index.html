@@ -3,39 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Indovina il numero</title>
+    <title>Indovina il numero</title> 
 </head>
 <body>
-    
-
-
-
-
     <script>
-        function generateRandomInteger(min, max){
-            let casualnumber = Math.random();
-            casualnumber = casualnumber * (max - min +1 ) +min;
-            casualnumber=Math.floor(casualnumber)
-            return casualnumber;
-        }
-        function sanitize (inputstring){
+        function sanitize (inputstring){ //Area riservata allo sanitize
             let sanitized = inputstring.toLowerCase().trim()
-
         return sanitized;
         }
-        let casualnumber = generateRandomInteger(1, 10);
-        console.log(casualnumber);
-        let numeroutente = prompt("Inserire il numero da indovinare");
-        while(numeroutente === null){
-            alert("Inserire una risposta valida")
-            numeroutente = prompt("Inserire il numero da indovinare");
-        }
-        if(sanitize(numeroutente) === casualnumber){ 
-            console.log("Corretto hai indovinato") //Aggiustato l'algoritmo del numero randomico, presenti bug sul confronto tra il numero inserito dall'utente in input e il numero randomico.
-        } else {
-            console.log("Errato")
-        }
+        function RandomNumber(min, max){ //Algoritmo generazione numero random
+            let casualNumber = Math.random();
+            casualNumber = casualNumber * 10;
+            casualNumber = parseInt(casualNumber);
+            return casualNumber;
+        } 
+            tentativi = 3;
+            tentativi = parseInt(tentativi);
+            console.log(tentativi );
+        let numerocasuale = RandomNumber(1, 10);     
+        console.log("Numero casuale generato: " + numerocasuale);
+        while(tentativi > 0){ //Da rivedere
 
+        }
+        let usernumber = prompt("Inserisci il numero da indovinare tra 1 e 10");
+        usernumber=parseInt(usernumber);
+        if (usernumber === null){
+            alert("Inserire una risposta valida!");
+            usernumber = prompt("Inserisci il numero da indovinare tra 1 e 10");
+        }
+        if(usernumber === numerocasuale){
+            console.log("Corretto hai indovinato")
+        } else{
+            console.log("Non hai indovinato!") 
+            tentativi=tentativi-1;
+            console.log(tentativi);
+        } 
+        if(tentativi.toLowerCase ==="0"){
+            console.log("Hai perso!");
+        } 
     </script>
 </body>
 </html>
