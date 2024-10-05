@@ -17,30 +17,31 @@
             casualNumber = parseInt(casualNumber);
             return casualNumber;
         } 
-            tentativi = 3;
-            tentativi = parseInt(tentativi);
+            tentativi = 3; //tentativi massimi dell'utente
+            tentativi = parseInt(tentativi); 
             console.log(tentativi );
         let numerocasuale = RandomNumber(1, 10);     
         console.log("Numero casuale generato: " + numerocasuale);
-        while(tentativi > 0){ //Da rivedere
-
-        }
+        while(tentativi > 0){
         let usernumber = prompt("Inserisci il numero da indovinare tra 1 e 10");
-        usernumber=parseInt(usernumber);
+        
+        usernumber=parseInt(usernumber);// Area che si occupa di confrontare le variabili tra il numero generato e quello inserito dall'utente.
         if (usernumber === null){
             alert("Inserire una risposta valida!");
             usernumber = prompt("Inserisci il numero da indovinare tra 1 e 10");
         }
         if(usernumber === numerocasuale){
             console.log("Corretto hai indovinato")
-        } else{
-            console.log("Non hai indovinato!") 
-            tentativi=tentativi-1;
+        } else{ 
+            console.log("Non hai indovinato!")  
+            tentativi=tentativi-1; //i tentativi vengono scalati
             console.log(tentativi);
         } 
-        if(tentativi.toLowerCase ==="0"){
+        if(tentativi === 0){ //Cosa succede se l'utente fallisce i tentativi
             console.log("Hai perso!");
+            break;
         } 
+    }
     </script>
 </body>
 </html>
